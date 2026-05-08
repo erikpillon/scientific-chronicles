@@ -3,9 +3,11 @@ name: Florence
 surname: Nightingale
 gender: Female
 nationality: British
-birth_date: 1820-05-12
-death_date: 1910-08-13
-disciplines: Nursing, Statistics
+birth_date: "1820-05-12"
+death_date: "1910-08-13"
+disciplines: 
+    - "Nursing"
+    - "Statistics"
 headline: The data nerd who saved thousands of lives with a pie chart.
 quote: "I attribute my success to this: I never gave or took any excuse."
 image: florence_nightingale_lamp.jpg
