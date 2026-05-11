@@ -8,7 +8,7 @@ death_date: 1988-02-15
 disciplines: Quantum Physics
 headline: The bongo-playing genius who made quantum mechanics almost make sense.
 quote: "I think I can safely say that nobody understands quantum mechanics."
-image: richard_feynman_chalkboard.jpg
+image: richard-p-feynman.png
 ---
 
 If your mental image of a physicist is a boring guy in a tweed jacket, you haven't met Richard Feynman. He was a Nobel laureate who helped build the atomic bomb, sure. But he also spent his downtime picking top-secret government safes just to mess with security guards, playing the bongos in Brazil, and figuring out the physics of wobbling plates in a cafeteria. 🥁⚛️

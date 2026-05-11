@@ -5,7 +5,7 @@ event_type: "Milestone"
 disciplines: ['Physics', 'Nanotechnology']
 associated_people: ['feynman-richard']
 headline: "Feynman predicts the world of the very, very small."
-image: "feynman-nano.jpg"
+image: "richard-p-feynman.png"
 ---
 
 In a talk at Caltech, physicist Richard Feynman suggested that it should be possible to manipulate and control things on an atomic scale. 

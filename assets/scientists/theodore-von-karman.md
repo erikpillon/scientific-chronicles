@@ -8,7 +8,7 @@ death_date: 1963-05-06
 disciplines: Aerospace Engineering, Physics
 headline: The guy who literally gave us the blueprints for the space age.
 quote: "Scientists study the world as it is; engineers create the world that has never been."
-image: von_karman_windtunnel.jpg
+image: theodore-von-karman.png
 ---
 
 You like airplanes that don't fall out of the sky? You owe a massive "thank you" to Theodore von Kármán. He was the undisputed grandmaster of aerodynamics. ✈️🚀
