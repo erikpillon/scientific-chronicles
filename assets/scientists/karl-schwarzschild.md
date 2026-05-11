@@ -15,4 +15,6 @@ quote: ""
 image: "karl-schwarzschild.jpg"
 ---
 
-Imagine Einstein drops his super-complex equations on the table and everyone's scratching their heads. Enter Karl Schwarzschild! ✨ This German theoretical astrophysicist didn't just *look* at them; he cracked them wide open, giving us the very first peek into what a black hole might actually look like mathematically. And yep, his work is the OG foundation for all that mind-blowing black hole research we see today. Talk about seeing the future (or the past, depending on the light cone)! He also did cool stuff in astronomy and optics, because why not be multi-talented?
+Picture this: It's 1915. World War I is raging and Einstein drops his super-complex equations on the table. Karl Schwarzschild is literally serving on the Russian front, dodging artillery fire. What does he do in his spare time? Oh, just reads Albert Einstein's brand-new, incredibly complicated theory of General Relativity and becomes the first person to actually solve the exact equations. 🤯🌌
+
+Einstein himself was stunned. Not only did Karl find a precise mathematical solution, but his math also accidentally predicted the existence of black holes—places where gravity is so intense that nothing can escape. We still use the "Schwarzschild radius" today to measure them. Doing groundbreaking astrophysics in a trench is the ultimate flex.
