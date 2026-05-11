@@ -19,12 +19,15 @@ def main(start_date):
     target_month = start_date.month
     target_day = start_date.day
     scientists_dir = "assets/scientists"
+    events_dir = "assets/events"
 
     if not os.path.exists(scientists_dir):
         print(f"Error: {scientists_dir} directory not found.")
         return
 
-    print(f"Searching for scientific events on {start_date.strftime('%B %d')}...")
+    print(
+        f"Searching for scientific personalities and events on the week of {start_date.strftime('%B %d')}..."
+    )
     found = False
 
     for file in os.listdir(scientists_dir):
@@ -57,7 +60,31 @@ def main(start_date):
                             found = True
                     except ValueError:
                         continue
+    for file in os.listdir(events_dir):
+        if file.endswith(".md"):
+            with open(os.path.join(events_dir, file), "r", encoding="utf-8") as f:
+                content = f.read()
 
+            parts = content.split("---")
+            if len(parts) < 3:
+                continue
+
+            metadata = parse_metadata_md(parts[1])
+            date_val = metadata.get("date", "")
+            if date_val and date_val != "unknown":
+                try:
+                    dt = datetime.datetime.strptime(date_val, "%Y-%m-%d")
+                    if (
+                        dt.month == target_month
+                        and dt.day - target_day <= 7
+                        and dt.day - target_day >= 0
+                    ):
+                        print(
+                            f" - [Event] {metadata.get('title', '')} ({date_val}) - {metadata.get('headline', '')}"
+                        )
+                        found = True
+                except ValueError:
+                    continue
     if not found:
         print("No events found for this day.")
 
