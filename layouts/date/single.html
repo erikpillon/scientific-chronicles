@@ -358,14 +358,18 @@
       prevButton.addEventListener('click', function() { navigateDay(-1); });
       nextButton.addEventListener('click', function() { navigateDay(1); });
 
-      if (window.location.hash) {
+      const openCardFromHash = function () {
+        if (!window.location.hash) return;
         const target = document.getElementById(window.location.hash.slice(1));
         if (target) {
           const details = target.querySelector('details');
           if (details) details.open = true;
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-      }
+      };
+
+      openCardFromHash();
+      window.addEventListener('hashchange', openCardFromHash);
     }());
   </script>
   <script src="/js/nav.js"></script>
