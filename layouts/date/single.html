@@ -259,6 +259,14 @@
                   <details class="collapsible-card">
                     <summary>
                       <div class="person-card-inner">
+                        {{ if .image }}
+                          {{ $img := resources.Get (printf "images/%s" .image) }}
+                          {{ if $img }}
+                            <div class="person-avatar">
+                              <img src="{{ $img.RelPermalink }}" alt="Illustration for {{ .title }}" loading="lazy">
+                            </div>
+                          {{ end }}
+                        {{ end }}
                         <div class="person-info">
                           <div class="person-header">
                             <div style="flex: 1;">
