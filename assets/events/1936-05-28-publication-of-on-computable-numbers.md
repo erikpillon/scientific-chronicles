@@ -6,6 +6,7 @@ disciplines: ['Mathematics', 'Computer Science']
 associated_people: ['turing-alan']
 headline: "Alan Turing dreams up the 'universal machine' that can do anything."
 image: "turing-paper.jpg"
+book_link: "https://amzn.to/4ftpx1U"
 ---
 
 In 1936, Alan Turing published a paper that defined the theoretical foundations of modern computing. He introduced the concept of the 'Turing Machine'—a simple hypothetical device that could simulate any algorithm. 
