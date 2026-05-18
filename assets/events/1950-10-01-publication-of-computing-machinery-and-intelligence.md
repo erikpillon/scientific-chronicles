@@ -6,6 +6,7 @@ disciplines: ['Computer Science', 'Artificial Intelligence']
 associated_people: ['turing-alan']
 headline: "Alan Turing asks 'Can machines think?' and proposes a game to find out."
 image: "turing-intelligence.jpg"
+book_link: "https://amzn.to/4ftpx1U"
 ---
 
 In his 1950 paper, Alan Turing bypassed the philosophical debate of what 'thinking' means and proposed the 'Imitation Game'—now known as the Turing Test. 
