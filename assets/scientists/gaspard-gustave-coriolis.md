@@ -3,7 +3,7 @@ name: "Gaspard-Gustave"
 surname: "Coriolis"
 gender: "male"
 nationality: "French"
-birth_date: "1792-05-25"
+birth_date: "1792-05-21"
 death_date: "1843-09-19"
 disciplines:
   - "mathematician"
