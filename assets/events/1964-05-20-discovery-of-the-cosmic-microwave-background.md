@@ -5,7 +5,7 @@ event_type: "Discovery"
 disciplines: ['Astronomy', 'Cosmology']
 associated_people: ['penzias-arno', 'wilson-robert']
 headline: "Two scientists find the echo of the Big Bang while trying to clean bird poop."
-image: "cmb-discovery.jpg"
+image: "cmb-discovery.png"
 ---
 
 In 1964, Arno Penzias and Robert Wilson were bothered by a persistent hiss in their radio antenna. They tried everything to get rid of it, including scrubbing out 'white dielectric material' (that's scientist for pigeon droppings). 
