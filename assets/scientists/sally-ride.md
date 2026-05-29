@@ -11,7 +11,7 @@ quote: "Science is fun. Science is curiosity."
 image: sally_ride_spacesuit_graphic.jpg
 books:
     - author: Lynn Sherr
-      title: Sally Ride: America's First Woman in Space
+      title: "Sally Ride: America's First Woman in Space"
       link: https://amzn.to/49H5pFO
 ---
 
