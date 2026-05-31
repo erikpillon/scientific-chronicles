@@ -5,7 +5,12 @@ event_type: "Invention"
 disciplines: ['Computer Science', 'Engineering']
 associated_people: ['wozniak-steve', 'jobs-steve']
 headline: "The Apple II brings color and ease of use to the home computer."
-image: "apple-ii.jpg"
+image: "apple-ii.png"
+books:
+    - author: Walter Isaacson
+      title: Steve Jobs
+      link: https://amzn.to/3PJsq4n
+      comment: 
 ---
 
 The Apple II was Steve Wozniak's masterpiece and Steve Jobs's marketing triumph. It was one of the first personal computers that felt like a consumer product, not a kit for hobbyists. 
