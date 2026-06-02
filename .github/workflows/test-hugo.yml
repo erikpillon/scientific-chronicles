@@ -1,0 +1,30 @@
+name: Test Hugo Build
+
+# This workflow triggers on pushes to any branch EXCEPT main, 
+# and on Pull Requests targeting main.
+on:
+  push:
+    branches-ignore:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: true  # Fetch Hugo themes if used as submodules
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true    # Use true if your theme requires Hugo Extended (e.g., for SCSS/SASS)
+
+      - name: Test Build
+        run: hugo --gc --minify

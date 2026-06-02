@@ -2,7 +2,7 @@
 title: Funding Newton's Principia
 date: 1686-06-02
 event_type: Scientific Publication
-disciplines: Physics, Mathematics
+disciplines: [Physics, Mathematics]
 associated_people: Isaac Newton, Edmond Halley
 headline: Newton wrote the greatest physics book ever, but Halley had to pay for it.
 image: halley_newton_principia.jpg
