@@ -2,7 +2,7 @@
 title: The Invention of Corn Flakes
 date: 1884-05-31
 event_type: Culinary Invention
-disciplines: Food Science, Nutrition
+disciplines: [Food Science, Nutrition]
 associated_people: John Harvey Kellogg, Will Keith Kellogg
 headline: How a forgotten pot of boiled wheat accidentally changed breakfast forever.
 image: kellogg_corn_flakes_accident.jpg

@@ -2,7 +2,7 @@
 title: Founding of the Royal Swedish Academy of Sciences
 date: 1739-06-02
 event_type: Institutional Founding
-disciplines: Science History
+disciplines: [Science History]
 associated_people: Carl Linnaeus, Jons Berzelius
 headline: The exclusive club that gets to pick the Nobel Prize winners.
 image: swedish_academy_sciences.jpg

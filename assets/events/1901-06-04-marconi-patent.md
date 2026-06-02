@@ -2,7 +2,7 @@
 title: Marconi Patents Wireless Telegraphy
 date: 1901-06-04
 event_type: Invention / Patent
-disciplines: Electrical Engineering, Communications
+disciplines: [Electrical Engineering, Communications]
 associated_people: Guglielmo Marconi
 headline: The patent that officially cut the cord on global communication.
 image: marconi_wireless_radio_graphic.jpg
