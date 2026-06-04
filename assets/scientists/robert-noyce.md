@@ -8,7 +8,7 @@ death_date: 1990-06-03
 disciplines: Physics, Entrepreneurship
 headline: The "Mayor of Silicon Valley" who put computers on a microchip.
 quote: "Don't be encumbered by history. Go off and do something wonderful."
-image: robert_noyce_microchip.jpg
+image: robert-noyce.png
 books:
     - author: Walter Isaacson
       title: "The Innovators: How a Group of Hackers, Geniuses, and Geeks Created the Digital Revolution"
