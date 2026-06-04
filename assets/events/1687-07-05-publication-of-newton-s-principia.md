@@ -5,7 +5,7 @@ event_type: "Publication"
 disciplines: ['Physics', 'Mathematics']
 associated_people: ['newton-isaac']
 headline: "Isaac Newton drops the ultimate rulebook for the universe."
-image: "principia.jpg"
+image: "newton-principia.png"
 ---
 
 Before July 1687, the universe was a bit of a chaotic mess—at least in our heads. Then Isaac Newton published *Philosophiæ Naturalis Principia Mathematica*, and suddenly, everything had to follow the rules. Gravity wasn't just a suggestion; it was the law. 

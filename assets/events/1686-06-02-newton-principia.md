@@ -5,7 +5,7 @@ event_type: Scientific Publication
 disciplines: [Physics, Mathematics]
 associated_people: Isaac Newton, Edmond Halley
 headline: Newton wrote the greatest physics book ever, but Halley had to pay for it.
-image: halley_newton_principia.jpg
+image: newton-principia.png
 ---
 
 Isaac Newton was brilliant, but he was also incredibly paranoid and hated publishing his work. It took the astronomer Edmond Halley (yes, the comet guy) visiting him and begging him to write down his theories of motion and gravity to finally get the job done. 
