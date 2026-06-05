@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode | default `en` }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ .Title }} | {{ site.Title }}</title>
+  <link rel="stylesheet" href="{{ `css/site.css` | relURL }}">
+</head>
+<body>
+  <div class="shell">
+    <div class="container">
+      <header class="nav">
+        <a class="brand" href="/">
+          <span class="brand-mark">SC</span>
+          <span>{{ site.Title }}</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#" id="today-nav-link">Today's Breakthrough</a>
+          <a href="/quizzes/">Quizzes</a>
+          <a href="/about/">The Lab</a>
+        </nav>
+      </header>
+
+      <main class="page-main quiz-page">
+        <section class="page-hero page-hero-single">
+          <div class="page-hero-copy">
+            <span class="eyebrow">Quiz</span>
+            <h1>{{ .Title }}</h1>
+            <p>{{ .Params.intro }}</p>
+            <div class="event-pills" style="margin-top: 1.25rem;">
+              {{ range .Params.disciplines }}
+                <span class="meta-pill">{{ . }}</span>
+              {{ end }}
+            </div>
+          </div>
+        </section>
+
+        <section class="quiz-panel" aria-labelledby="quiz-question">
+          <h2 id="quiz-question">{{ .Params.question }}</h2>
+
+          <div class="quiz-options">
+            {{ range $index, $option := .Params.options }}
+              {{ $humanIndex := add $index 1 }}
+              <button class="quiz-btn" type="button" data-answer="{{ $humanIndex }}">
+                <span class="quiz-option-index">{{ $humanIndex }}</span>
+                <span>{{ $option }}</span>
+              </button>
+            {{ end }}
+          </div>
+
+          {{ with .Params.hint }}
+            <div class="quiz-hint">
+              <button class="quiz-hint-toggle" type="button" aria-expanded="false" aria-controls="hint-box">
+                Need a hint?
+              </button>
+              <div id="hint-box" class="quiz-hint-box" hidden>
+                {{ . }}
+              </div>
+            </div>
+          {{ end }}
+
+          <div id="result-box" class="quiz-result" hidden>
+            <h3 id="result-title"></h3>
+            <p>{{ .Params.explanation }}</p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const correctAnswer = {{ .Params.correct_answer }};
+      const buttons = document.querySelectorAll('.quiz-btn');
+      const resultBox = document.getElementById('result-box');
+      const resultTitle = document.getElementById('result-title');
+      const hintToggle = document.querySelector('.quiz-hint-toggle');
+      const hintBox = document.getElementById('hint-box');
+      let hasAnswered = false;
+
+      if (hintToggle && hintBox) {
+        hintToggle.addEventListener('click', function () {
+          const isHidden = hintBox.hidden;
+          hintBox.hidden = !isHidden;
+          hintToggle.setAttribute('aria-expanded', String(isHidden));
+        });
+      }
+
+      buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          if (hasAnswered) return;
+          hasAnswered = true;
+
+          const guess = Number(button.dataset.answer);
+          buttons.forEach(function (option) {
+            const answer = Number(option.dataset.answer);
+            option.disabled = true;
+
+            if (answer === correctAnswer) {
+              option.classList.add('is-correct');
+            } else if (answer === guess) {
+              option.classList.add('is-incorrect');
+            } else {
+              option.classList.add('is-muted');
+            }
+          });
+
+          resultBox.hidden = false;
+          if (guess === correctAnswer) {
+            resultBox.classList.add('is-correct');
+            resultTitle.innerText = 'Correct';
+          } else {
+            resultBox.classList.add('is-incorrect');
+            resultTitle.innerText = 'Not quite';
+          }
+        });
+      });
+    }());
+  </script>
+  <script src="/js/nav.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
+

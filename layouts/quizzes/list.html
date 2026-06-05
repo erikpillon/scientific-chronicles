@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode | default `en` }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ .Title }} | {{ site.Title }}</title>
+  <link rel="stylesheet" href="{{ `css/site.css` | relURL }}">
+</head>
+<body>
+  <div class="shell">
+    <div class="container">
+      <header class="nav">
+        <a class="brand" href="/">
+          <span class="brand-mark">SC</span>
+          <span>{{ site.Title }}</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#" id="today-nav-link">Today's Breakthrough</a>
+          <a href="/quizzes/">Quizzes</a>
+          <a href="/about/">The Lab</a>
+        </nav>
+      </header>
+
+      <main class="page-main">
+        <section class="page-hero page-hero-single">
+          <div class="page-hero-copy">
+            <span class="eyebrow">Scientific quizzes</span>
+            <h1>Test Your Knowledge</h1>
+            <p>Challenge yourself with short trivia from the history of science and discovery.</p>
+          </div>
+        </section>
+
+        <section class="list-panel">
+          {{ if .Pages }}
+            <div class="quiz-grid">
+              {{ range .Pages.ByDate.Reverse }}
+                <article class="quiz-card">
+                  <div class="event-pills">
+                    {{ range .Params.disciplines }}
+                      <span class="meta-pill">{{ . }}</span>
+                    {{ end }}
+                  </div>
+                  <h2>{{ .Title }}</h2>
+                  <p>{{ .Params.intro }}</p>
+                  <a class="btn btn-primary" href="{{ .RelPermalink }}">Start quiz</a>
+                </article>
+              {{ end }}
+            </div>
+          {{ else }}
+            <div class="empty-state">
+              <p>No quizzes are published yet.</p>
+            </div>
+          {{ end }}
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="/js/nav.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
+
