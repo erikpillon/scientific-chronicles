@@ -8,10 +8,10 @@ Welcome to Issue #4! If your job does not involve working inside a cellar, you a
 ### 📅 Scientific Anniversaries
 *   **June 2, 1686: Funding the Blueprint of the Universe** 🍎
     Isaac Newton wrote the *Principia Mathematica*, arguably the most important physics book ever written. However, the Royal Society was out of money, so astronomer Edmond Halley had to personally finance its publication. It is a classic case of brilliant first-principles thinking needing an angel investor to see the light of day.
-*   **June 5, 1995: The "Super-Atom" is Born** ❄️
-    Scientists successfully created the first **Bose-Einstein Condensate**. By cooling a gas of atoms to just a fraction of a degree above absolute zero, the atoms stopped acting like individual particles and merged into a single macroscopic quantum entity. 
+*   **June 5, 1995: The Fifth State of Matter** ❄️
+    We are all taught in school that matter comes in three states: solid, liquid, and gas. If your science teacher was a bit of a rebel, they might have even told you about the fourth: plasma. But on this day in 1995, a team of scientists proved the existence of a fifth state—the Bose-Einstein Condensate. By cooling a cloud of rubidium atoms to just a fraction of a degree above absolute zero, the atoms completely stopped acting like individual particles. Instead, they collapsed into the exact same quantum state, merging into a single, macroscopic "super-atom." It’s what happens when quantum mechanics stops being a microscopic theory and becomes a macroscopic reality.
 *   **June 6, 1944: Penicillin Hits the Beaches** 💊
-    Coinciding exactly with D-Day, this was the first time penicillin was mass-produced and ready for use by Allied troops. It marked a massive paradigm shift in battlefield medicine and saved countless lives.
+    Coinciding exactly with D-Day, this was the first time penicillin was mass-produced and ready for use by Allied troops. By dramatically reducing the mortality rate from bacterial infections among the wounded—and dropping the bacterial death rate among British and American soldiers by a factor of 18—it fundamentally changed battlefield medicine. Penicillin is estimated to have saved hundreds of thousands of lives during WWII only. 
 
 ---
 
