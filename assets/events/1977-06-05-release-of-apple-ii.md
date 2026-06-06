@@ -2,10 +2,10 @@
 title: The Release of the Apple II
 date: 1977-06-05
 event_type: Tech Launch
-disciplines: Computer Science, Engineering
+disciplines: [Computer Science, Engineering]
 associated_people: Steve Wozniak, Steve Jobs
 headline: The plastic box of wires that put a computer in your living room.
-image: apple_ii.png
+image: apple-ii.png
 books:
     - author: Walter Isaacson
       title: Steve Jobs

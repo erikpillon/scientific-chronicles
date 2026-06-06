@@ -2,7 +2,7 @@
 title: The First Official Metre and Kilogram
 date: 1799-06-06
 event_type: Standardization
-disciplines: Physics, Metrology
+disciplines: [Physics, Metrology]
 associated_people: French National Assembly
 headline: The day the French locked the exact length of a metre in a vault.
 image: platinum_metre_bar_vault.jpg

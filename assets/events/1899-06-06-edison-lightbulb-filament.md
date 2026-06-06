@@ -2,7 +2,7 @@
 title: Edison Patents a Better Lightbulb Filament
 date: 1899-06-06
 event_type: Patent
-disciplines: Electrical Engineering
+disciplines: [Electrical Engineering]
 associated_people: Thomas A. Edison
 headline: Edison figures out how to keep a lightbulb from immediately exploding.
 image: edison_glowing_filament.jpg
