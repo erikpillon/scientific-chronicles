@@ -7,11 +7,26 @@ import re
 
 def parse_metadata_md(md_content):
     metadata = {}
-    # Basic parsing for YAML-like frontmatter
+    current_key = None
+    # Parsing for YAML-like frontmatter with support for lists and nested-key protection
     for line in md_content.split("\n"):
-        if ":" in line and not line.strip().startswith("-"):
+        if not line.strip():
+            continue
+
+        # A key is considered top-level if the line does not start with whitespace
+        is_top_level = not line.startswith((" ", "\t"))
+
+        if ":" in line and is_top_level:
             key, value = line.split(":", 1)
-            metadata[key.strip()] = value.strip().strip('"')
+            key = key.strip()
+            metadata[key] = value.strip().strip('"')
+            current_key = key
+        elif line.strip().startswith("-") and current_key:
+            # If we find a list item, ensure the current key holds a list
+            if not isinstance(metadata.get(current_key), list):
+                metadata[current_key] = []
+            item = line.strip()[1:].strip().strip('"')
+            metadata[current_key].append(item)
     return metadata
 
 
@@ -50,7 +65,7 @@ def main(start_date):
                         dt = datetime.datetime.strptime(date_val, "%Y-%m-%d")
                         if (
                             dt.month == target_month
-                            and dt.day - target_day <= 7
+                            and dt.day - target_day < 7
                             and dt.day - target_day >= 0
                         ):
                             event_type = "Birth" if key == "birth_date" else "Death"
@@ -76,7 +91,7 @@ def main(start_date):
                     dt = datetime.datetime.strptime(date_val, "%Y-%m-%d")
                     if (
                         dt.month == target_month
-                        and dt.day - target_day <= 7
+                        and dt.day - target_day < 7
                         and dt.day - target_day >= 0
                     ):
                         print(
