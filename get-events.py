@@ -61,20 +61,20 @@ def main(start_date):
             for key in ["birth_date", "death_date"]:
                 date_val = metadata.get(key, "")
                 if date_val and date_val != "unknown":
-                    try:
-                        dt = datetime.datetime.strptime(date_val, "%Y-%m-%d")
+                    # Use regex to support negative years (BCE) which strptime doesn't handle
+                    match = re.match(r"(-?\d+)-(\d{2})-(\d{2})", date_val)
+                    if match:
+                        _, month, day = map(int, match.groups())
                         if (
-                            dt.month == target_month
-                            and dt.day - target_day < 7
-                            and dt.day - target_day >= 0
+                            month == target_month
+                            and day - target_day < 7
+                            and day - target_day >= 0
                         ):
                             event_type = "Birth" if key == "birth_date" else "Death"
                             print(
                                 f" - [{event_type}] {name} ({date_val}) - {metadata.get('headline', '')}"
                             )
                             found = True
-                    except ValueError:
-                        continue
     for file in os.listdir(events_dir):
         if file.endswith(".md"):
             with open(os.path.join(events_dir, file), "r", encoding="utf-8") as f:
@@ -87,19 +87,18 @@ def main(start_date):
             metadata = parse_metadata_md(parts[1])
             date_val = metadata.get("date", "")
             if date_val and date_val != "unknown":
-                try:
-                    dt = datetime.datetime.strptime(date_val, "%Y-%m-%d")
+                match = re.match(r"(-?\d+)-(\d{2})-(\d{2})", date_val)
+                if match:
+                    _, month, day = map(int, match.groups())
                     if (
-                        dt.month == target_month
-                        and dt.day - target_day < 7
-                        and dt.day - target_day >= 0
+                        month == target_month
+                        and day - target_day < 7
+                        and day - target_day >= 0
                     ):
                         print(
                             f" - [Event] {metadata.get('title', '')} ({date_val}) - {metadata.get('headline', '')}"
                         )
                         found = True
-                except ValueError:
-                    continue
     if not found:
         print("No events found for this day.")
 
