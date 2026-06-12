@@ -5,7 +5,7 @@ event_type: "Milestone"
 disciplines: ['Exploration', 'Geography']
 associated_people: ['amundsen-roald']
 headline: "Roald Amundsen wins the race to the bottom of the world."
-image: "south-pole-arrival.jpg"
+image: "roald-amundsen.png"
 ---
 
 In a high-stakes race against the British explorer Robert Falcon Scott, Roald Amundsen and his team of four Norwegians reached the South Pole first. 
