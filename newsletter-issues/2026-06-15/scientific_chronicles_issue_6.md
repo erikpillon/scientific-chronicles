@@ -42,7 +42,7 @@ Imagine a game where a fair coin is tossed repeatedly until "Heads" appears. If 
 - C) Around €100
 - D) An infinite amount of money
 
-(The answer is known as the St. Petersburg Paradox, and it proves that human psychology and pure math don't always look at risk the same way!)
+(The answer, [available here](https://scientific-chronicles.vercel.app/quizzes/st-petersburg-paradox/), is known as the St. Petersburg Paradox, and it proves that human psychology and pure math don't always look at risk the same way!)
 
 **Level 2 (Data Sciencentist Special):**
 
@@ -53,6 +53,8 @@ Imagine you are looking at data for rare, independent events happening over time
 - D) Exactly 50%
 
 *(The underlying mathematical reality might completely change how you look at "predictable" timelines!)*
+
+Answer to the quiz is available [at this link](https://scientific-chronicles.vercel.app/quizzes/poisson-distribution/)
 
 ---
 
