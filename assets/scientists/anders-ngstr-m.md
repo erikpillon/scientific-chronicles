@@ -5,10 +5,10 @@ gender: Male
 nationality: Swedish
 birth_date: 1814-08-13
 death_date: 1874-06-21
-disciplines: Physics, Spectroscopy
+disciplines: [Physics, Spectroscopy]
 headline: The physicist who mapped the sun and got a really tiny unit named after him.
 books: []
-image: anders_angstrom_spectroscopy.jpg
+image: anders-angstrom.png
 ---
 
 How do you figure out what the Sun is made of without actually going there? You ask Anders Ångström. 

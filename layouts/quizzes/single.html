@@ -5,6 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ .Title }} | {{ site.Title }}</title>
   <link rel="stylesheet" href="{{ `css/site.css` | relURL }}">
+  
+  <!-- 1. MathJax Configuration & Script Insertion -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
   <div class="shell">
@@ -21,12 +37,13 @@
         </nav>
       </header>
 
-      <main class="page-main quiz-page">
+      <main class="page-main quiz-page tex2jax_process">
         <section class="page-hero page-hero-single">
           <div class="page-hero-copy">
             <span class="eyebrow">Quiz</span>
             <h1>{{ .Title }}</h1>
-            <p>{{ .Params.intro }}</p>
+            <!-- Added markdownify to render any bold/italics in the parameters safely -->
+            <p>{{ .Params.intro | markdownify }}</p>
             <div class="event-pills" style="margin-top: 1.25rem;">
               {{ range .Params.disciplines }}
                 <span class="meta-pill">{{ . }}</span>
@@ -36,14 +53,14 @@
         </section>
 
         <section class="quiz-panel" aria-labelledby="quiz-question">
-          <h2 id="quiz-question">{{ .Params.question }}</h2>
+          <h2 id="quiz-question">{{ .Params.question | markdownify }}</h2>
 
           <div class="quiz-options">
             {{ range $index, $option := .Params.options }}
               {{ $humanIndex := add $index 1 }}
               <button class="quiz-btn" type="button" data-answer="{{ $humanIndex }}">
                 <span class="quiz-option-index">{{ $humanIndex }}</span>
-                <span>{{ $option }}</span>
+                <span>{{ $option | markdownify }}</span>
               </button>
             {{ end }}
           </div>
@@ -54,14 +71,15 @@
                 Need a hint?
               </button>
               <div id="hint-box" class="quiz-hint-box" hidden>
-                {{ . }}
+                {{ . | markdownify }}
               </div>
             </div>
           {{ end }}
 
           <div id="result-box" class="quiz-result" hidden>
             <h3 id="result-title"></h3>
-            <p>{{ .Params.explanation }}</p>
+            <!-- Changed to markdownify so math logic renders flawlessly -->
+            <div>{{ .Params.explanation | markdownify }}</div>
           </div>
         </section>
       </main>
@@ -121,4 +139,3 @@
   <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
-

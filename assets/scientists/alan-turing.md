@@ -15,7 +15,7 @@ disciplines:
   - "Artificial Intelligence"
 headline: "Turing is widely considered to be the father of theoretical computer science and artificial intelligence."
 quote: ""
-image: "alan-turing.png"
+image: "alan-turing-2.png"
 book_link: "https://amzn.to/4ftpx1U"
 ---
 

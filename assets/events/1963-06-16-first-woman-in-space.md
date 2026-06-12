@@ -5,7 +5,7 @@ event_type: "Milestone"
 disciplines: ['Space Science', 'Aeronautics']
 associated_people: ['tereshkova-valentina']
 headline: "Valentina Tereshkova proves that the stars don't have a 'no girls allowed' sign."
-image: "tereshkova-space.jpg"
+image: "first-woman-in-space.png"
 ---
 
 In 1963, Valentina Tereshkova blasted off in Vostok 6, becoming the first woman to orbit the Earth. She spent three days in space, orbiting 48 times—more than all the American astronauts combined at that point. 

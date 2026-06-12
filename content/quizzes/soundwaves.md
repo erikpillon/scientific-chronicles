@@ -1,7 +1,7 @@
 ---
 title: "The Speed of Sound"
 date: "2026-06-05"
-disciplines: ["Physics", "Acoustics"]
+disciplines: ["Physics", "Acousticcs"]
 intro: "We know from James Clerk Maxwell that light travels as an electromagnetic wave through the vacuum of space. But what about mechanical waves, like sound traveling through solid matter?"
 question: "Through which of these media does sound travel the fastest?"
 options:
