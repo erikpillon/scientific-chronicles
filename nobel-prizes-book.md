@@ -38,3 +38,6 @@ In summary, the fascination with Nobel Prize winners is deeply ingrained in huma
 visit this link for more stories and info: https://chatgpt.com/share/6a0d6d9f-0158-8326-ac5f-64fc66b4c4ae
 
 ## Biography
+
+## Stories 
+- Penzial and Wilson and the prediction of Gamow: seeing the street from a NY skyscraper. Wilson and Penzial brought our view to half a centimeter from the asphalt
