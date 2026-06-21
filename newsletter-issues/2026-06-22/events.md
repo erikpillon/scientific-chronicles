@@ -1,0 +1,31 @@
+Searching for scientific personalities and events on the week of June 22...
+ - [Birth] William Thomson (1824-06-26) - An influential Irish physicist, mathematician, and engineer, described as the Newton of his era, known for the Kelvin temperature scale and his work on the transatlantic telegraph cable.
+ - [Death] Felix Klein (1925-06-22) - He invented a 3D bottle with zero volume that breaks human logic.
+ - [Birth] Alan Turing (1912-06-23) - Turing is widely considered to be the father of theoretical computer science and artificial intelligence.
+ - [Birth] Hermann Minkowski (1864-06-22) - Mathematician known for developing the geometrical theory of numbers and for his work on space-time, which laid the mathematical foundation for Albert Einstein's general theory of relativity.
+ - [Event] Galileo is Forced to Recant (1633-06-22) - The Inquisition puts the smartest man in Italy in a cosmic timeout.
+ - [Event] Publication of CRISPR-Cas9 as a Genome Editing Tool (2012-06-28) - A pair of scientists give us the 'find and replace' tool for DNA.
+ - [Event] First Commercial Nuclear Power Plant Opens (Obninsk) (1954-06-27) - The USSR plugs the atom into the grid for the first time.
+ - [Event] First Successful Flight of a Practical Helicopter (1936-06-26) - Germany builds a flying machine that can actually stay in one place.
+ - [Other Event] Roswell Report: Case Closed published (1997-06-24) - Roswell Report: Case Closed published
+ - [Other Event] John Dillinger named Public Enemy Number One (1934-06-22) - John Dillinger named Public Enemy Number One
+ - [Other Event] Battle of Bannockburn (1314-06-23) - Battle of Bannockburn
+ - [Other Event] John Christie sentenced to death (1953-06-25) - John Christie sentenced to death
+ - [Other Event] International Pineapple Day (0002-06-27) - International Pineapple Day
+ - [Other Event] F (0002-06-24) - F
+ - [Other Event] First-ever use of a Universal Product Code (UPC) barcode (1974-06-26) - First-ever use of a Universal Product Code (UPC) barcode
+ - [Other Event] Joseph Smith martyred (1844-06-27) - Joseph Smith martyred
+ - [Other Event] National Bourbon Day (0002-06-25) - National Bourbon Day
+ - [Other Event] Arrival of Empire Windrush (1948-06-22) - Arrival of Empire Windrush
+ - [Other Event] World's first ATM debuted (1967-06-27) - World's first ATM debuted
+ - [Other Event] Alan Turing's birthday (1912-06-23) - Alan Turing's birthday
+ - [Other Event] Bilbo Baggins returns home (0002-06-22) - Bilbo Baggins returns home
+ - [Other Event] Unveiling of Windrush national monument (2022-06-22) - Unveiling of Windrush national monument
+ - [Other Event] Catfish Day (0002-06-25) - Catfish Day
+ - [Other Event] Birth of Violette Szabo (1921-06-26) - Birth of Violette Szabo
+ - [Other Event] National Cognac Day (0002-06-25) - National Cognac Day
+ - [Other Event] Birth of John Dillinger (1903-06-22) - Birth of John Dillinger
+ - [Other Event] International Olympic Committee founded (1894-06-23) - International Olympic Committee founded
+ - [Other Event] The Saxophone's birthday (1846-06-28) - The Saxophone's birthday
+ - [Other Event] Assassination of Archduke Franz Ferdinand (1914-06-28) - Assassination of Archduke Franz Ferdinand
+ - [Other Event] International Cachaça Day and Dia dos Namorados (0002-06-25) - International Cachaça Day and Dia dos Namorados
