@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode | default `en` }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Era Explorer | {{ site.Title }}</title>
+  <link rel="stylesheet" href="{{ `css/site.css` | relURL }}">
+  <style>
+    .era-detail-container {
+      display: none;
+    }
+    .era-detail-container.active {
+      display: block;
+    }
+    .events-scroll {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin-top: 2rem;
+      padding: 2rem 0;
+    }
+    .timeline-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 20px;
+      width: 4px;
+      background: #eee;
+      border-radius: 2px;
+      z-index: 0;
+    }
+    .event-wrapper {
+      position: relative;
+      padding-left: 60px;
+      margin-bottom: 2rem;
+    }
+    .timeline-dot {
+      position: absolute;
+      top: 1.5rem;
+      left: 10px;
+      width: 16px;
+      height: 16px;
+      background: #aaa;
+      border: 4px solid #fff;
+      border-radius: 50%;
+      z-index: 2;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .event-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transform-origin: center left;
+      will-change: transform, opacity;
+    }
+    .event-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .event-card h3 { margin: 0; font-size: 1.2rem; }
+    .event-date {
+      font-weight: bold;
+      color: #007acc;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    .event-card p.headline {
+      margin: 0;
+      color: #555;
+      line-height: 1.5;
+    }
+    .expand-btn {
+      align-self: flex-start;
+      background: none;
+      border: none;
+      color: #007acc;
+      cursor: pointer;
+      padding: 0;
+      font-size: 0.9rem;
+      font-weight: bold;
+      text-decoration: underline;
+      margin-top: 0.5rem;
+    }
+    .expand-btn:hover {
+      color: #005f9e;
+    }
+    .event-body {
+      display: none;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+      color: #333;
+      line-height: 1.6;
+    }
+    .event-card.expanded .event-body {
+      display: block;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      text-decoration: none;
+      color: #007acc;
+      font-weight: bold;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="container">
+      <header class="nav">
+        <a class="brand" href="/">
+          <span class="brand-mark">SC</span>
+          <span>{{ site.Title }}</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#" id="today-nav-link">Today's Breakthrough</a>
+          <a href="/eras/">Eras & Epics</a>
+          <a href="/quizzes/">Quizzes</a>
+          <a href="/about/">The Lab</a>
+        </nav>
+      </header>
+
+      <main class="page-main">
+        <a href="/eras/" class="back-link">← Back to Eras & Epics</a>
+        
+        {{ $events := slice }}
+        {{ range resources.Match "events/*.md" }}
+          {{ $parts := split .Content "---" }}
+          {{ if ge (len $parts) 3 }}
+            {{ $meta := index $parts 1 | transform.Unmarshal }}
+            {{ $bodyStr := trim (delimit (after 2 $parts) "---") " \n\r\t" }}
+            {{ $event := merge $meta (dict "body" ($bodyStr | markdownify)) }}
+            {{ $events = $events | append $event }}
+          {{ end }}
+        {{ end }}
+        {{ $events = sort $events "date" }}
+
+        <div id="eras-content">
+          {{ range $key, $era := .Site.Params.eras }}
+            <div class="era-detail-container" id="era-{{ $key }}">
+              <section class="page-hero">
+                <div class="page-hero-copy">
+                  <span class="eyebrow">Era Explorer</span>
+                  <h1 id="era-title">{{ $era.title }}</h1>
+                  <p>{{ $era.description }}</p>
+                </div>
+              </section>
+
+              <div class="events-scroll">
+                <div class="timeline-line"></div>
+                {{ range $events }}
+                  {{ $eventDisciplines := .disciplines | default slice }}
+                  {{ $match := intersect $era.tags $eventDisciplines }}
+                  {{ if gt (len $match) 0 }}
+                    <div class="event-wrapper fade-in-scroll">
+                      <div class="timeline-dot"></div>
+                      <div class="event-card dynamic-scroll-card">
+                        <div class="event-card-header">
+                          <h3>{{ .title }}</h3>
+                          <span class="event-date">{{ .date }}</span>
+                        </div>
+                        <p class="headline">{{ .headline }}</p>
+                        
+                        <button class="expand-btn">Read more</button>
+                        <div class="event-body">
+                          {{ .body }}
+                          {{ if .image }}
+                            <img src="/images/{{ .image }}" style="max-width: 100%; height: auto; border-radius: 4px; margin-top: 1rem;" alt="{{ .title }}">
+                          {{ end }}
+                        </div>
+                      </div>
+                    </div>
+                  {{ end }}
+                {{ end }}
+              </div>
+            </div>
+          {{ end }}
+          
+          <div id="era-not-found" class="era-detail-container">
+            <h2>Era not found</h2>
+            <p>Please select a valid era from the <a href="/eras/">Eras & Epics</a> page.</p>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const eraId = urlParams.get('era');
+      
+      if (eraId) {
+        const target = document.getElementById('era-' + eraId);
+        if (target) {
+          target.classList.add('active');
+        } else {
+          document.getElementById('era-not-found').classList.add('active');
+        }
+      } else {
+        document.getElementById('era-not-found').classList.add('active');
+      }
+
+      // Expandable Cards Logic
+      const expandBtns = document.querySelectorAll('.expand-btn');
+      expandBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const card = this.closest('.event-card');
+          card.classList.toggle('expanded');
+          if (card.classList.contains('expanded')) {
+            this.textContent = 'Read less';
+          } else {
+            this.textContent = 'Read more';
+          }
+          // Request a scroll update immediately since layout height changed
+          requestAnimationFrame(updateTimelineScroll);
+        });
+      });
+
+      // Scroll-driven animation logic
+      function updateTimelineScroll() {
+        const wrappers = document.querySelectorAll('.fade-in-scroll');
+        const viewportCenter = window.innerHeight / 2;
+        
+        wrappers.forEach(wrapper => {
+          // Only animate cards in the currently active era
+          if (wrapper.closest('.era-detail-container.active') === null) return;
+          
+          const card = wrapper.querySelector('.dynamic-scroll-card');
+          const dot = wrapper.querySelector('.timeline-dot');
+          const rect = wrapper.getBoundingClientRect();
+          const cardCenter = rect.top + rect.height / 2;
+          const distanceToCenter = Math.abs(viewportCenter - cardCenter);
+          const maxDistance = window.innerHeight / 1.5;
+          
+          let ratio = distanceToCenter / maxDistance;
+          ratio = Math.min(Math.max(ratio, 0), 1);
+          
+          // Card scales from 1 (center) to 0.85 (edges)
+          const scale = 1 - (ratio * 0.15);
+          // Opacity fades out non-linearly towards edges
+          const opacity = 1 - Math.pow(ratio, 1.5);
+          
+          if (card) {
+            card.style.transform = `scale(${scale})`;
+            card.style.opacity = Math.max(opacity, 0.2); // keep a minimum opacity
+          }
+          
+          if (dot) {
+            // Highlight the active dot
+            if (ratio < 0.25) {
+              dot.style.transform = 'scale(1.5)';
+              dot.style.backgroundColor = '#007acc';
+            } else {
+              dot.style.transform = 'scale(1)';
+              dot.style.backgroundColor = '#aaa';
+            }
+          }
+        });
+      }
+
+      window.addEventListener('scroll', () => {
+        requestAnimationFrame(updateTimelineScroll);
+      }, { passive: true });
+      window.addEventListener('resize', () => {
+        requestAnimationFrame(updateTimelineScroll);
+      }, { passive: true });
+      
+      // Initialize state
+      setTimeout(() => requestAnimationFrame(updateTimelineScroll), 50);
+    });
+  </script>
+  <script src="/js/nav.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

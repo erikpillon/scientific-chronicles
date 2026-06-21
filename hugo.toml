@@ -10,3 +10,22 @@ title = 'Scientific Chronicles'
         [markup.goldmark.extensions.passthrough.delimiters]
           block = [['\[', '\]'], ['$$', '$$']]
           inline = [['\(', '\)'], ['$', '$']]
+
+[params]
+  [params.eras]
+    [params.eras.space_race]
+      title = "The Space Race"
+      description = "Journey back to the era when we unlocked the power of the nucleus and changed the world forever."
+      tags = ["Space Science", "Aeronautics"]
+    [params.eras.quantum_era]
+      title = "The Quantum Era"
+      description = "The strange world of particles and probability."
+      tags = ["Physics"]
+    [params.eras.dna_discovery]
+      title = "DNA Discovery History"
+      description = "Unlocking the building blocks of life."
+      tags = ["Biology", "Genetics"]
+    [params.eras.periodic_table]
+      title = "The Periodic Table"
+      description = "Organizing the elements."
+      tags = ["Chemistry"]

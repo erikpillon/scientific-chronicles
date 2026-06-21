@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode | default `en` }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ .Title }} | {{ site.Title }}</title>
+  <link rel="stylesheet" href="{{ `css/site.css` | relURL }}">
+  <style>
+    .era-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .era-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+      background: #fff;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .era-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .era-card h2 {
+      margin: 0;
+      color: #007acc;
+    }
+    .era-card p {
+      margin: 0;
+      color: #555;
+      line-height: 1.5;
+    }
+    .era-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+    .era-tag {
+      font-size: 0.75rem;
+      background: #eee;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="container">
+      <header class="nav">
+        <a class="brand" href="/">
+          <span class="brand-mark">SC</span>
+          <span>{{ site.Title }}</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#" id="today-nav-link">Today's Breakthrough</a>
+          <a href="/eras/">Eras & Epics</a>
+          <a href="/quizzes/">Quizzes</a>
+          <a href="/about/">The Lab</a>
+        </nav>
+      </header>
+
+      <main class="page-main">
+        <section class="page-hero">
+          <div class="page-hero-copy">
+            <span class="eyebrow">Taxonomy</span>
+            <h1>Eras & Epics</h1>
+            <p>Explore the defining chapters of scientific history, curated directly from our main themes.</p>
+          </div>
+        </section>
+
+        <div class="era-grid">
+          {{ range $key, $era := .Site.Params.eras }}
+            <a href="/era-detail/?era={{ $key }}" class="era-card">
+              <h2>{{ $era.title }}</h2>
+              <p>{{ $era.description }}</p>
+              <div class="era-tags">
+                {{ range $era.tags }}
+                  <span class="era-tag">{{ . }}</span>
+                {{ end }}
+              </div>
+            </a>
+          {{ end }}
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="/js/nav.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
