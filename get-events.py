@@ -35,6 +35,7 @@ def main(start_date):
     target_day = start_date.day
     scientists_dir = "assets/scientists"
     events_dir = "assets/events"
+    other_events_dir = "assets/other-events"
 
     if not os.path.exists(scientists_dir):
         print(f"Error: {scientists_dir} directory not found.")
@@ -99,6 +100,31 @@ def main(start_date):
                             f" - [Event] {metadata.get('title', '')} ({date_val}) - {metadata.get('headline', '')}"
                         )
                         found = True
+    for file in os.listdir(other_events_dir):
+        if file.endswith(".md"):
+            with open(os.path.join(other_events_dir, file), "r", encoding="utf-8") as f:
+                content = f.read()
+
+            parts = content.split("---")
+            if len(parts) < 3:
+                continue
+
+            metadata = parse_metadata_md(parts[1])
+            date_val = metadata.get("date", "")
+            if date_val and date_val != "unknown":
+                match = re.match(r"(-?\d+)-(\d{2})-(\d{2})", date_val)
+                if match:
+                    _, month, day = map(int, match.groups())
+                    if (
+                        month == target_month
+                        and day - target_day < 7
+                        and day - target_day >= 0
+                    ):
+                        print(
+                            f" - [Other Event] {metadata.get('title', '')} ({date_val}) - {metadata.get('headline', '')}"
+                        )
+                        found = True
+
     if not found:
         print("No events found for this day.")
 
