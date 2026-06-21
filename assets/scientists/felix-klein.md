@@ -11,7 +11,7 @@ books:
   - author: Jeffrey R. Weeks
     title: "The Shape of Space"
     link: https://amzn.to/3T6lOp9
-image: felix-klein.png
+image: felix-klein-1.png
 ---
 
 Topology is the math of shapes, and Felix Klein was its ultimate grandmaster. He wanted to unify all the different, chaotic branches of geometry into one clean system, which he successfully did in 1872 (the "Erlangen Program"). 
