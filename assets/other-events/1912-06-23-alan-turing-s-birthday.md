@@ -6,7 +6,7 @@ event_type: "Other"
 disciplines: []
 associated_people: []
 headline: "Alan Turing's birthday"
-image: ""
+image: "alan-turing.png"
 ---
 
 Mathematician, codebreaker, computing pioneer, and the father of artificial intelligence, Alan Turing was born in Maida Vale, West London.
