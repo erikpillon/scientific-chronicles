@@ -29,6 +29,23 @@ def parse_metadata_md(md_content):
             metadata[current_key].append(item)
     return metadata
 
+def calculate_days_diff(start_date, end_date):
+    # Parse start_date if it's a string
+    if isinstance(start_date, str):
+        start_date = datetime.datetime.strptime(start_date, "%Y-%m-%d").date()
+    elif isinstance(start_date, datetime.datetime):
+        start_date = start_date.date() # Convert datetime to date
+
+    # Parse end_date if it's a string
+    if isinstance(end_date, str):
+        end_date = datetime.datetime.strptime(end_date, "%Y-%m-%d").date()
+    elif isinstance(end_date, datetime.datetime):
+        end_date = end_date.date() # Convert datetime to date
+    return (end_date - start_date).days
+
+def is_in_next_week(start_date, end_date):
+    days_diff = calculate_days_diff(start_date, end_date)
+    return days_diff < 7 and days_diff >= 0
 
 def main(start_date):
     target_month = start_date.month
@@ -46,84 +63,75 @@ def main(start_date):
     )
     found = False
 
-    for file in os.listdir(scientists_dir):
-        if file.endswith(".md"):
-            with open(os.path.join(scientists_dir, file), "r", encoding="utf-8") as f:
-                content = f.read()
+    scientist_files = [file for file in os.listdir(scientists_dir) if file.endswith(".md")]
+    for file in scientist_files:
+        
+        with open(os.path.join(scientists_dir, file), "r", encoding="utf-8") as f:
+            content = f.read()
 
-            parts = content.split("---")
-            if len(parts) < 3:
-                continue
+        parts = content.split("---")
+        if len(parts) < 3:
+            continue
 
-            metadata = parse_metadata_md(parts[1])
-            name = f"{metadata.get('name', '')} {metadata.get('surname', '')}".strip()
+        metadata = parse_metadata_md(parts[1])
+        name = f"{metadata.get('name', '')} {metadata.get('surname', '')}".strip()
 
-            # Check both birth and death dates
-            for key in ["birth_date", "death_date"]:
-                date_val = metadata.get(key, "")
-                if date_val and date_val != "unknown":
-                    # Use regex to support negative years (BCE) which strptime doesn't handle
-                    match = re.match(r"(-?\d+)-(\d{2})-(\d{2})", date_val)
-                    if match:
-                        _, month, day = map(int, match.groups())
-                        if (
-                            month == target_month
-                            and day - target_day < 7
-                            and day - target_day >= 0
-                        ):
-                            event_type = "Birth" if key == "birth_date" else "Death"
-                            print(
-                                f" - [{event_type}] {name} ({date_val}) - {metadata.get('headline', '')}"
-                            )
-                            found = True
-    for file in os.listdir(events_dir):
-        if file.endswith(".md"):
-            with open(os.path.join(events_dir, file), "r", encoding="utf-8") as f:
-                content = f.read()
-
-            parts = content.split("---")
-            if len(parts) < 3:
-                continue
-
-            metadata = parse_metadata_md(parts[1])
-            date_val = metadata.get("date", "")
+        # Check both birth and death dates
+        for key in ["birth_date", "death_date"]:
+            date_val = metadata.get(key, "")
             if date_val and date_val != "unknown":
+                # Use regex to support negative years (BCE) which strptime doesn't handle
                 match = re.match(r"(-?\d+)-(\d{2})-(\d{2})", date_val)
                 if match:
                     _, month, day = map(int, match.groups())
-                    if (
-                        month == target_month
-                        and day - target_day < 7
-                        and day - target_day >= 0
-                    ):
+                    if is_in_next_week(datetime.date(year=2026, month=target_month, day=target_day), datetime.date(year=2026, month=month, day=day)):
+                        event_type = "Birth" if key == "birth_date" else "Death"
                         print(
-                            f" - [Event] {metadata.get('title', '')} ({date_val}) - {metadata.get('headline', '')}"
+                            f" - [{event_type}] {name} ({date_val}) - {metadata.get('headline', '')}"
                         )
                         found = True
-    for file in os.listdir(other_events_dir):
-        if file.endswith(".md"):
-            with open(os.path.join(other_events_dir, file), "r", encoding="utf-8") as f:
-                content = f.read()
+    
+    event_files = [file for file in os.listdir(events_dir) if file.endswith(".md")]
+    for file in event_files:
+        with open(os.path.join(events_dir, file), "r", encoding="utf-8") as f:
+            content = f.read()
 
-            parts = content.split("---")
-            if len(parts) < 3:
-                continue
+        parts = content.split("---")
+        if len(parts) < 3:
+            continue
 
-            metadata = parse_metadata_md(parts[1])
-            date_val = metadata.get("date", "")
-            if date_val and date_val != "unknown":
-                match = re.match(r"(-?\d+)-(\d{2})-(\d{2})", date_val)
-                if match:
-                    _, month, day = map(int, match.groups())
-                    if (
-                        month == target_month
-                        and day - target_day < 7
-                        and day - target_day >= 0
-                    ):
-                        print(
-                            f" - [Other Event] {metadata.get('title', '')} ({date_val}) - {metadata.get('headline', '')}"
-                        )
-                        found = True
+        metadata = parse_metadata_md(parts[1])
+        date_val = metadata.get("date", "")
+        if date_val and date_val != "unknown":
+            match = re.match(r"(-?\d+)-(\d{2})-(\d{2})", date_val)
+            if match:
+                _, month, day = map(int, match.groups())
+                if is_in_next_week(datetime.date(year=2026, month=target_month, day=target_day), datetime.date(year=2026, month=month, day=day)):
+                    print(
+                        f" - [Event] {metadata.get('title', '')} ({date_val}) - {metadata.get('headline', '')}"
+                    )
+                    found = True
+    
+    other_events_files = [file for file in os.listdir(other_events_dir) if file.endswith(".md")]
+    for file in other_events_files:
+        with open(os.path.join(other_events_dir, file), "r", encoding="utf-8") as f:
+            content = f.read()
+
+        parts = content.split("---")
+        if len(parts) < 3:
+            continue
+
+        metadata = parse_metadata_md(parts[1])
+        date_val = metadata.get("date", "")
+        if date_val and date_val != "unknown":
+            match = re.match(r"(-?\d+)-(\d{2})-(\d{2})", date_val)
+            if match:
+                _, month, day = map(int, match.groups())
+                if is_in_next_week(datetime.date(year=2026, month=target_month, day=target_day), datetime.date(year=2026, month=month, day=day)):
+                    print(
+                        f" - [Other Event] {metadata.get('title', '')} ({date_val}) - {metadata.get('headline', '')}"
+                    )
+                    found = True
 
     if not found:
         print("No events found for this day.")
