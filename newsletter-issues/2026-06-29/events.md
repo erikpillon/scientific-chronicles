@@ -1,0 +1,32 @@
+Searching for scientific personalities and events on the week of June 29...
+ - [Death] André-Gustave Citroën (1935-07-03) - The marketing genius who turned the Eiffel Tower into a giant car billboard.
+ - [Death] Charles Goodyear (1860-07-01) - The obsessed inventor who went to prison so we could have car tires.
+ - [Birth] Hans Albrecht Bethe (1906-07-02) - The physicist who finally figured out how the Sun actually shines.
+ - [Death] John William Strutt (1919-06-30) - British physicist John William Strutt, 3rd Baron Rayleigh, was a Nobel laureate known for extensive contributions to theoretical and experimental physics, including the discovery of argon and his work on Rayleigh scattering.
+ - [Birth] Gottfried Leibniz (1646-07-01) - Gottfried Leibniz was a German philosopher, mathematician, and political adviser, renowned for his independent invention of differential and integral calculus and his contributions to metaphysics and logic.
+ - [Birth] Sir George Everest (1790-07-04) - The grumpy surveyor who desperately didn't want the world's tallest mountain named after him.
+ - [Death] Margherita Hack (2013-06-29) - Italy's "Lady of the Stars" who mapped the universe and took no nonsense.
+ - [Death] Marie Curie (1934-07-04) - Marie Curie was a pioneering Polish-French chemist and physicist who discovered polonium and radium, was the first woman to win a Nobel Prize, and the only person to win Nobel Prizes in two different scientific fields.
+ - [Event] Publication of Newton’s Principia Mathematica (1687-07-05) - Isaac Newton drops the ultimate rulebook for the universe.
+ - [Event] The Birth of Dolly the Sheep (1996-07-05) - The day science fiction casually became reality in a Scottish barn.
+ - [Event] Landing of the Mars Pathfinder (1997-07-04) - NASA lands a bunch of giant airbags on Mars and lets out a tiny, six-wheeled tourist.
+ - [Event] Publication of 'A Mathematical Theory of Communication' (1948-07-01) - Claude Shannon invents the 'bit' and the science of sharing info.
+ - [Event] Announcement of the Discovery of the Higgs Boson (2012-07-04) - CERN finds the 'God Particle' that gives everything mass.
+ - [Event] First Magnetic Resonance Imaging (MRI) Scan (1977-07-03) - Raymond Damadian takes the first high-definition look inside a human body.
+ - [Event] Publication of the Bohr Model of the Atom (1913-07-01) - Niels Bohr explains that atoms look like tiny solar systems with rules.
+ - [Other Event] Ernest Hemingway died (1961-07-02) - Ernest Hemingway died
+ - [Other Event] Angostura Bitters Limited Formed (1921-07-01) - Angostura Bitters Limited Formed
+ - [Other Event] President Bill Clinton's motorcade incident at Tower Bridge (1997-06-30) - President Bill Clinton's motorcade incident at Tower Bridge
+ - [Other Event] Double-decker bus incident at Tower Bridge (1952-06-30) - Double-decker bus incident at Tower Bridge
+ - [Other Event] Harold 'Kim' Philby admits being a Soviet double agent (1963-07-01) - Harold 'Kim' Philby admits being a Soviet double agent
+ - [Other Event] Establishment of the Mission of San Francisco of Assisi (1776-06-29) - Establishment of the Mission of San Francisco of Assisi
+ - [Other Event] Tower Bridge opened (1894-06-30) - Tower Bridge opened
+ - [Other Event] Canadian Confederation (1867-07-01) - Canadian Confederation
+ - [Other Event] The Watchtower magazine launched (1879-07-01) - The Watchtower magazine launched
+ - [Other Event] Bikini Introduced by Louis Réard (1946-07-05) - Bikini Introduced by Louis Réard
+ - [Other Event] First Air Mail Delivery Attempt (1859-07-01) - First Air Mail Delivery Attempt
+ - [Other Event] Marconi received the first wireless patent (1896-07-02) - Marconi received the first wireless patent
+ - [Other Event] First Tour de France begins (1903-07-01) - First Tour de France begins
+ - [Other Event] National Health Service (NHS) Launched (1948-07-05) - National Health Service (NHS) Launched
+ - [Other Event] Doctor's Day in India / Birthday and day of death of Dr. B. C. Roy (0002-07-01) - Doctor's Day in India / Birthday and day of death of Dr. B. C. Roy
+ - [Other Event] International Plastic Bag-Free Day (0002-07-03) - International Plastic Bag-Free Day
