@@ -1,7 +1,7 @@
 ---
 title: "Aircraft flew under Tower Bridge"
-date: 1968-06-30
-date_original: "June 30, 1968"
+date: 1968-04-05
+date_original: "April 5, 1968"
 event_type: "Other"
 disciplines: []
 associated_people: []
