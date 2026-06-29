@@ -3,7 +3,8 @@
 
 Welcome to Issue #8! 
 
-Right now, the world is divided between tracking the brutal alpine climbs of the newly started Tour de France and seeking relief from the midsummer sun. It turns out that understanding heat, energy, and optimal routing isn't a modern headache. This week, we explore how human systems mastered raw physics—from the exact day we figured out how the Sun actually shines to the moment Claude Shannon mathematically defined a single "bit" of data.
+Congratulations to all of you for making it this far across the heatwave. Remember we're not even in July, though. 
+It turns out that understanding heat, energy, and optimal routing isn't a modern headache. This week, we explore how human systems mastered raw physics—from the exact day we figured out how the Sun actually shines to the moment Claude Shannon mathematically defined a single "bit" of data.
 
 The pact is simple: under 5 minutes of high-signal science history and mathematical logic to jumpstart your Monday. No fluff, no sponsorships, just the data.
 
@@ -15,7 +16,7 @@ Let’s dive straight into the first principles.
 * **💡 July 1, 1948: The Birth of the Digital Language**
   Claude Shannon published *"A Mathematical Theory of Communication"*, effectively inventing information theory. Long before the internet existed, Shannon mathematically defined the concept of information and introduced the word **"bit"** as the fundamental unit of data storage and transmission. If you are reading this on a screen, you are living inside his mathematical matrix.
 * **🪐 July 1, 1913: The Solar System Inside the Atom**
-  Niels Bohr published his revolutionary model of the atom. By combining classical physics with early quantum concepts, Bohr suggested that electrons travel around a nucleus in fixed, quantized orbits—like tiny planets circling a sun. It wasn't completely perfect, but it fundamentally broke classical chemistry.
+  Niels Bohr, the legendary Danish physicist and cofounder of the quantum theory, published his revolutionary model of the atom. By combining classical physics with early quantum concepts, Bohr suggested that electrons travel around a nucleus in fixed, quantized orbits—like tiny planets circling a sun. It wasn't completely perfect, but it fundamentally broke classical chemistry.
 * **🌌 July 4, 2012: Finding the 'God Particle'**
   Physicists at CERN announced the discovery of the **Higgs Boson** via the Large Hadron Collider. The breakthrough confirmed the existence of the Higgs field—an invisible energy field stretching across the cosmos that slows down fundamental particles and gives everything in the universe its actual physical mass. 
 
@@ -24,6 +25,8 @@ Let’s dive straight into the first principles.
 ### 🎂 Birthdays & Legacies
 * **📐 July 1: [Gottfried Leibniz](https://scientific-chronicles.vercel.app/date/07-01.html#gottfried-leibniz.html) (b. 1646)**
   The German mathematical powerhouse who independently invented calculus (completely setting off one of the pettiest, most toxic priority disputes in history with Isaac Newton). While Newton's math was messy, it was Leibniz who gave us the elegant $d/dx$ and integral symbols ($\int$) that engineers and data scientists use every single day.
+  The dispute of paternity of integral calculus is on the other side a really open topic nowadays, as Sheldon Cooper famously pointed out:
+  https://www.youtube.com/watch?v=EqiiCOFR0Y8 
 * **☀️ July 2: [Hans Albrecht Bethe](https://scientific-chronicles.vercel.app/date/07-02.html#hans-bethe.html) (b. 1906)**
   The brilliant nuclear physicist who looked up at the sky and finally solved a mystery that had stumped humanity for millennia: how the Sun actually shines. He mapped out the precise thermonuclear reactions (the carbon-nitrogen-oxygen cycle) that turn hydrogen into helium, lighting up our solar system.
 * **⛰️ July 4: [Sir George Everest](https://scientific-chronicles.vercel.app/date/07-04.html#george-everest.html) (b. 1790)**
@@ -35,12 +38,12 @@ Let’s dive straight into the first principles.
 Since **Claude Shannon** taught us how to accurately quantify information and remove noise, let’s see if your brain can process a classic logic trap without losing data.
 
 Imagine you have a deck of cards consisting of 25 red cards and 25 black cards. You sit down at a table and thoroughly shuffle them. You draw the first two cards off the top of the deck. What are the odds that both cards you pulled are of the **same color**?
-A) Exactly 50%
-B) Slightly less than 50%
-C) Slightly more than 50%
-D) Exactly 25%
+- A) Exactly 50%
+- B) Slightly less than 50%
+- C) Slightly more than 50%
+- D) Exactly 25%
 
-**Drop your guess in the comments!** *(The mathematical reality shows why human intuition struggles with dependent variables when the sample space shrinks!)*
+Answer is available here! *(The mathematical reality shows why human intuition struggles with dependent variables when the sample space shrinks!)*
 
 ---
 
